@@ -5,9 +5,6 @@ column_names = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'c
 iris_data = pd.read_csv(data_url, header=None, names=column_names)
 # Display the first few rows of the dataset
 print(iris_data.head())
-
-
-
 # Display basic information about the dataset
 print(iris_data.info())
 # Display summary statistics of the dataset
@@ -15,18 +12,12 @@ print(iris_data.describe())
 # Check for missing values
 missing_values = iris_data.isnull().sum()
 print("Missing values:\n", missing_values)
-
-
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 # Plot histograms for numerical features
 iris_data.hist(figsize=(10, 8), bins=20)
 plt.tight_layout()
 plt.show()
-
-
-
 # Scatter plot between sepal length and sepal width
 plt.figure(figsize=(8, 6))
 sns.scatterplot(x='sepal_length', y='sepal_width', hue='class', data=iris_data)
@@ -34,9 +25,6 @@ plt.title('Sepal Length vs. Sepal Width')
 plt.xlabel('Sepal Length')
 plt.ylabel('Sepal Width')
 plt.show()
-
-
-
 # Compute the correlation matrix
 correlation_matrix = iris_data.corr()
 # Plot the heatmap
@@ -44,9 +32,6 @@ plt.figure(figsize=(10, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
 plt.title('Correlation Matrix')
 plt.show()
-
-
-
 # Box plots for numerical features
 plt.figure(figsize=(12, 10))
 for i, feature in enumerate(iris_data.columns[:-1]):
